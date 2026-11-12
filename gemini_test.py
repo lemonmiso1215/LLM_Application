@@ -4,7 +4,7 @@ from google import genai
 load_dotenv()
 client = genai.Client()
 
-#input_text = input("질문을 입력하세요 : ")
+input_text = input("질문을 입력하세요 : ")
 
 interaction = client.interactions.create(
     model="gemini-3.5-flash-lite",
@@ -18,4 +18,4 @@ output_text = interaction.output_text
 #print(f"질문 : {input_text}, 답변 : {output_text}")
  
 # print(f"질문 : {input_text}")
-#print(f"답변 : {output_text}")
+print(f"답변 : {output_text}")

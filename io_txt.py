@@ -3,6 +3,8 @@ print("hello")
 from pathlib import Path 
 #Path라는 라이브러리로 호출
 # from 어떤 함수 어떤 모듈을 사용할거냐
+
+
 def read_document():
 #변수는 직관적으로 만든다.함수이름도.
   return Path("data/git_기초.txt").read_text(encoding="utf-8") 

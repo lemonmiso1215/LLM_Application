@@ -22,8 +22,9 @@ def answer_question(question):
     )
     return interaction.output_text
 
-question = input("질문을 입력하세요 : ")
-answer = answer_question(question)
+if __name__ == "__main__":
+    question = input("질문을 입력하세요 : ")
+    answer = answer_question(question)
 
-print(f"질문 : {question}")
-print(f"답변 : {answer}")
+    print(f"질문 : {question}")
+    print(f"답변 : {answer}")
