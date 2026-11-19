@@ -30,7 +30,7 @@ function App() {
       const data = await response.json()
       const answer = data.answer
       setMessages((current) => [
-      ...current, { role: "assistant", text: answer },
+      ...current, { role: "assistant", text: answer, source: data.sources ?? [],},
       ])
 
     
@@ -57,6 +57,11 @@ function App() {
           <div className={`message ${message.role}`} key={index}>
             <span className="role">{message.role === 'user' ? '나' : '챗봇'}</span>
             <p>{message.text}</p>
+            {message.sources?.length > 0 && (<small className="sources">
+              참고 자료: {message.sources.join(", ")}
+              </small>
+        )}
+
           </div>
         ))}
         {loading && <p className="status">답변을 작성하고 있습니다...</p>}
